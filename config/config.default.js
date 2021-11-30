@@ -52,9 +52,11 @@ module.exports = appInfo => {
         USER_LOGIN: 24 * 60 * 60 * 3, // 用户登陆token缓存
         DIC_CONFIG_DEF: 24 * 60 * 60 * 1, // dic表配置信息缓存
         DIC_CONFIG_NOT_EXISTS_SHORT: 60 * 1, // dic表配置不存在时短时缓存
-        HOME_SHOW_DATA: 24 * 60 * 60 * 1, // 首页默认缓存时间
       },
     },
+    dicMaps: new Map([
+      [ 'home&tips', [ 'home', 'tips', true ]],
+    ]),
   };
 
   return {

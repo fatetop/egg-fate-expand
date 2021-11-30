@@ -8,9 +8,11 @@ class HomeService extends BaseService {
    * @return {Promise<{ code: number; message: string; data: any; success: boolean }>} 返回响应体
    */
   async getHomeInfo(channelNo) {
-    const { app } = this;
+    const { app, service, config } = this;
     // TODO anything
-    return app.serviceSuccess(channelNo);
+    // eg.
+    const tips = await service.dic.dic.getDicValueByTypeAndKey(...config.dicMaps.get('home&tips'));
+    return app.serviceSuccess({ channelNo, tips });
   }
 
 }
