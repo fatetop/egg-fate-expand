@@ -34,6 +34,9 @@
   },
   "scripts": {
     "sit": "egg-scripts start --daemon --title=egg-server-template --env=sit --workers=4",
+    "dev": "egg-scripts start --daemon --title=egg-server-template --env=dev --workers=4",
+    "beta": "egg-scripts start --daemon --title=egg-server-template --env=beta --workers=4",
+    "prod": "egg-scripts start --daemon --title=egg-server-template --env=prod --workers=4",
     "stop": "egg-scripts stop --title=egg-server-template",
     "local": "egg-bin dev",
     "debug": "egg-bin debug",

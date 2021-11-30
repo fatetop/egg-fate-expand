@@ -1,0 +1,1 @@
+git checkout . && git pull && npm install && npm run beta

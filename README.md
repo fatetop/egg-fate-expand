@@ -19,10 +19,9 @@ $ open http://localhost:8888/
 ### Deploy
 
 ```bash
-# sit environment 
-$ yarn install
-$ yarn sit
-$ yarn stop && yarn sit
+# dev environment 
+$ git clone [项目地址]
+$ cd egg-template && sh publish.[re]start.[env].sh
 ```
 
 [egg]: https://eggjs.org
