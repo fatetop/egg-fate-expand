@@ -1,6 +1,29 @@
-
 const tHelper = require('./tHelper');
 exports.tHelper = tHelper;
+
+const { InviteCode } = require('./InviteCode');
+
+/**
+ * 生成纯数字邀请码
+ * @example createInviteCodeByNum.id2ShareCode(100)
+ * createInviteCodeByNum.shareCode2id('89U4LEZ')
+ * @example createInviteCodeByNum.id2ShareCode(99992999)
+ * createInviteCodeByNum.shareCode2id('A8PPXGU')
+ * @example createInviteCodeByNum.id2ShareCode(99992999999)
+ * createInviteCodeByNum.shareCode2id('AMABAPXG')
+ */
+exports.createInviteCodeByNum = new InviteCode(1);
+
+/**
+ * 生成混合邀请码
+ * @example createInviteCodeByMix.id2ShareCode(100)
+ * createInviteCodeByMix.shareCode2id('89U4LEZ')
+ * @example createInviteCodeByMix.id2ShareCode(99992999)
+ * createInviteCodeByMix.shareCode2id('A8PPXGU')
+ * @example createInviteCodeByMix.id2ShareCode(99992999999)
+ * createInviteCodeByMix.shareCode2id('AMABAPXG')
+ */
+exports.createInviteCodeByMix = new InviteCode(2);
 
 /**
  * 四舍五入保留指定位数的数字

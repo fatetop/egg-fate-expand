@@ -3,8 +3,9 @@
 使用egg搭建一个基础框架，方便后期拓展使用
 
 ## 技术选型
-- 核心框架：Koa + Egg
-- ORM： Sequelize
+- 核心框架：[Koa][koa] + [Egg][egg]
+- ORM： [Sequelize][sequelize]
+- ParamsValidate: [Parameter][parameter]
 - 会话管理: MD5 token
 - Api风格：restful
 
@@ -14,11 +15,6 @@
 - redis 6+
 
 ## QuickStart
-
-<!-- add docs here for user -->
-
-see [egg docs][egg] for more detail.
-
 ### Development
 
 ```bash
@@ -35,7 +31,10 @@ $ git clone [项目地址]
 $ cd egg-template && sh publish.[re]start.[env].sh
 ```
 
+[koa]: https://koa.bootcss.com/
 [egg]: https://eggjs.org
+[sequelize]: https://sequelize.org/master
+[parameter]: https://github.com/node-modules/parameter
 
 ## 参与贡献
 
