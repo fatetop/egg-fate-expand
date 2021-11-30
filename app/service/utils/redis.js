@@ -141,6 +141,36 @@ class RedisService extends Service {
     return false;
   }
 
+  /**
+   * 递增
+   * @param {string} key 缓存名
+   * @param {number} step 步进数
+   * @return {Promise<number | null>} 操作后的值
+   */
+  async increment(key, step = 1) {
+    const { app } = this;
+    // 判断Redis配置是否开启
+    if (app.redis) {
+      return app.redis.incrby(key, step);
+    }
+    return null;
+  }
+
+  /**
+   * 递减
+   * @param {string} key 缓存名
+   * @param {number} step 步进数
+   * @return {Promise<number | null>} 操作后的值
+   */
+  async decrement(key, step = 1) {
+    const { app } = this;
+    // 判断Redis配置是否开启
+    if (app.redis) {
+      return app.redis.decrby(key, step);
+    }
+    return null;
+  }
+
 }
 
 module.exports = RedisService;
