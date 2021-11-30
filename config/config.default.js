@@ -1,4 +1,5 @@
 /* eslint valid-jsdoc: "off" */
+const path = require('path');
 
 const { errorCode, errorMsg } = require('../app/utils/errorInfo');
 
@@ -11,6 +12,11 @@ module.exports = appInfo => {
    * @type {Egg.EggAppConfig}
    **/
   const config = exports = {};
+
+  // 将 logger 目录放到代码目录下
+  config.logger = {
+    dir: path.join(appInfo.baseDir, 'logs'),
+  };
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1637052932913_2694';

@@ -1,9 +1,4 @@
-const path = require('path');
-
-/**
- * @param {Egg.EggAppInfo} appInfo app info
- */
-module.exports = appInfo => {
+module.exports = () => {
 
   /**
    * built-in config
@@ -15,7 +10,7 @@ module.exports = appInfo => {
   config.cluster = {
     listen: {
       path: '',
-      port: 6666,
+      port: 8888,
       hostname: '0.0.0.0',
     },
   };
@@ -26,7 +21,6 @@ module.exports = appInfo => {
     outputJSON: true,
     encoding: 'utf-8',
     consoleLevel: 'DEBUG',
-    dir: path.join(appInfo.baseDir, 'logs'),
   };
 
   // 数据库ORM管理

@@ -13,7 +13,7 @@ see [egg docs][egg] for more detail.
 ```bash
 $ yarn install
 $ yarn local
-$ open http://localhost:6666/
+$ open http://localhost:8888/
 ```
 
 ### Deploy
