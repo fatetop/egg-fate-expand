@@ -2,6 +2,17 @@
 ## 介绍
 使用egg搭建一个基础框架，方便后期拓展使用
 
+## 技术选型
+- 核心框架：Koa + Egg
+- ORM： Sequelize
+- 会话管理: MD5 token
+- Api风格：restful
+
+## 基础环境
+- Nodejs 12+
+- Mysql 5.7+
+- redis 6+
+
 ## QuickStart
 
 <!-- add docs here for user -->
