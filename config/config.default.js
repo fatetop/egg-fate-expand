@@ -47,6 +47,7 @@ module.exports = appInfo => {
   const userConfig = {
     // myAppName: 'egg',
     errorCode, errorMsg,
+    projectName: 'egg-template',
     redis: {
       expireTimeOut: {
         USER_LOGIN: 24 * 60 * 60 * 3, // 用户登陆token缓存
@@ -57,6 +58,11 @@ module.exports = appInfo => {
     dicMaps: new Map([
       [ 'home&tips', [ 'home', 'tips', true ]],
     ]),
+    alarm: {
+      dinDing: {
+        checkUserNum: '',
+      },
+    },
   };
 
   return {

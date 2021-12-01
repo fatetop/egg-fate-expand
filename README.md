@@ -7,7 +7,8 @@
 - ORM： [Sequelize][sequelize]
 - ParamsValidate: [Parameter][parameter]
 - 会话管理: MD5 token
-- Api风格：restful
+- Api风格：Restful
+- 资源报警：钉钉通知机器人
 
 ## 基础环境
 - Nodejs 12+

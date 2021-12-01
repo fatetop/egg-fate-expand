@@ -1,6 +1,6 @@
 const BaseService = require('../base');
 
-class SConfigService extends BaseService {
+class DicService extends BaseService {
 
   /**
    * 获取dic缓存key
@@ -58,4 +58,4 @@ class SConfigService extends BaseService {
 
 }
 
-module.exports = SConfigService;
+module.exports = DicService;
