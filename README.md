@@ -18,6 +18,93 @@
 - Erlang 23+
 - RabbitMq 3.8.14+
 
+## 项目架构
+
+```bash
+├── LICENSE
+├── README.md
+├── agent.js
+├── app
+│   ├── controller
+│   │   ├── base.js
+│   │   └── home
+│   │       └── home.js
+│   ├── extend
+│   │   └── application.js
+│   ├── middleware
+│   │   └── error_handler.js
+│   ├── model
+│   │   ├── dic.js
+│   │   └── user.js
+│   ├── public
+│   ├── router.js
+│   ├── schedule
+│   │   └── checkUserNum.js
+│   ├── service
+│   │   ├── base.js
+│   │   ├── dic
+│   │   │   └── dic.js
+│   │   ├── home
+│   │   │   └── home.js
+│   │   ├── mq
+│   │   │   └── consume.js
+│   │   └── utils
+│   │       ├── alarm.js
+│   │       ├── redis.js
+│   │       └── schedule.js
+│   └── utils
+│       ├── InviteCode.js
+│       ├── errorInfo.js
+│       ├── index.js
+│       ├── rabbitMq
+│       │   ├── dlx
+│       │   │   ├── consume.js
+│       │   │   └── producer.js
+│       │   └── xDelayed
+│       └── tHelper
+│           └── index.js
+├── app.js
+├── appveyor.yml
+├── config
+│   ├── config.beta.js
+│   ├── config.default.js
+│   ├── config.dev.js
+│   ├── config.local.js
+│   ├── config.prod.js
+│   ├── config.sit.js
+│   └── plugin.js
+├── database
+│   ├── create.sql
+│   ├── createTable.js
+│   └── index.js
+├── jsconfig.json
+├── logs
+│   ├── common-error.json.log
+│   ├── common-error.log
+│   ├── egg-agent.json.log
+│   ├── egg-agent.log
+│   ├── egg-schedule.json.log
+│   ├── egg-schedule.log
+│   ├── egg-web.json.log
+│   ├── egg-web.log
+│   ├── template-web.json.log
+│   └── template-web.log
+├── package.json
+├── publish.restart.beta.sh
+├── publish.restart.dev.sh
+├── publish.restart.prod.sh
+├── publish.restart.test.sh
+├── publish.start.beta.sh
+├── publish.start.dev.sh
+├── publish.start.prod.sh
+├── publish.start.test.sh
+├── test
+│   └── app
+│       └── controller
+│           └── home.test.js
+└── yarn.lock
+```
+
 ## QuickStart
 ### Development
 
