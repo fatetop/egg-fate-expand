@@ -119,7 +119,7 @@ $ open http://localhost:8888/
 ```bash
 # dev environment 
 $ git clone [项目地址]
-$ cd egg-template && sh publish.[re]start.[env].sh
+$ cd egg-fate-expand && sh publish.[re]start.[env].sh
 ```
 
 [koa]: https://koa.bootcss.com/
