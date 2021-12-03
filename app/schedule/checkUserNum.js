@@ -9,7 +9,7 @@ class RepeatNotifyEvents extends Subscription {
       // cron: '0 0 */3 * * *',
       type: 'worker', // 配置为all时，指定所有的 worker 都需要执行
       immediate: true, // 配置为true时，应用启动并ready后立刻执行
-      disable: false, // 配置为true时，这个定时任务不会启动
+      disable: true, // 配置为true时，这个定时任务不会启动
     };
   }
 

@@ -1,9 +1,26 @@
 const Controller = require('egg').Controller;
 
+const { send: sendProducer } = require('../utils/rabbitMq/dlx/producer');
+
 /**
  * ! MUST DO 控制器层处理参数校验 、调用service 、 最终服务响应
  */
 class BaseController extends Controller {
+
+  /**
+   * 测试 Dlx 队列 Producer
+   */
+  async sendMqDlx() {
+    const { ctx, config } = this;
+    const { exchange, queue, exchangeDLX, routingKeyDLX } = config.rabbit.working;
+    const msg = { a: 'hello world! hello world!' };
+    const sendRes = await sendProducer(config.amqplib.connect, { exchange, queue, exchangeDLX, routingKeyDLX }, 5000, msg).catch(ctx.logger.error);
+    console.log('sendRes', sendRes);
+    if (!sendRes) {
+      // TODO 报警机制
+      // service.utils.alarm.dingDingRobot();
+    }
+  }
 
   /**
    * 请求可响应结果 json响应

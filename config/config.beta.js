@@ -55,6 +55,21 @@ module.exports = () => {
     },
   };
 
+  config.amqplib = {
+    enable: false,
+    connect: {
+      hostname: '',
+      port: '5672',
+      username: '',
+      password: '',
+      authMechanism: 'AMQPLAIN',
+      pathname: '/',
+      ssl: {
+        enabled: false,
+      },
+    },
+  };
+
   return {
     ...config,
   };

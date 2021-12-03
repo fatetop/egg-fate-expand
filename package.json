@@ -7,6 +7,7 @@
     "declarations": true
   },
   "dependencies": {
+    "amqplib": "^0.8.0",
     "core-util-is": "^1.0.3",
     "egg": "^2.15.1",
     "egg-redis": "^2.4.0",

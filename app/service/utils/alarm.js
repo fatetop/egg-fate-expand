@@ -12,7 +12,7 @@ class AlarmService extends BaseService {
   dingDingRobot(url, message = '', workers = []) {
     const { app, config } = this;
     const nowTime = moment().format('YYYY-MM-DD H:mm:ss');
-    const content = `产品：${config.projectName}\n${message}\n运行环境:${app.env}\n当前时间：${nowTime}\n`;
+    const content = `产品：${config.projectName}\n${message}\n运行环境:${config.env}\n当前时间：${nowTime}\n`;
     app.curl(url, {
       method: 'POST',
       contentType: 'json',

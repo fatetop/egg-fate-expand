@@ -58,9 +58,19 @@ module.exports = appInfo => {
     dicMaps: new Map([
       [ 'home&tips', [ 'home', 'tips', true ]],
     ]),
-    alarm: {
-      dinDing: {
-        checkUserNum: '',
+    alarm: { // 报警通知
+      dinDing: { // 钉钉机器人
+        checkUserNum: '', // 检查健康用户
+        consumeError: '', // 消费者消费错误
+      },
+    },
+    rabbit: { // 消息队列配置
+      working: { // 业务相关
+        exchange: 'testEx',
+        queue: 'testQu',
+        exchangeDLX: 'testExDLX',
+        routingKeyDLX: 'testRoutingKeyDLX',
+        queueDLX: 'testQueueDLX',
       },
     },
   };

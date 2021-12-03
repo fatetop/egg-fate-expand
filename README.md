@@ -7,13 +7,16 @@
 - ORM： [Sequelize][sequelize]
 - ParamsValidate: [Parameter][parameter]
 - 会话管理: MD5 token
-- Api风格：Restful
-- 资源报警：钉钉通知机器人
+- Api风格: Restful
+- 资源报警: 钉钉通知机器人
+- 消息队列: [RabbitMq][rabbitMq]
 
 ## 基础环境
 - Nodejs 12+
 - Mysql 5.7+
-- redis 6+
+- Redis 6+
+- Erlang 23+
+- RabbitMq 3.8.14+
 
 ## QuickStart
 ### Development
@@ -36,6 +39,7 @@ $ cd egg-template && sh publish.[re]start.[env].sh
 [egg]: https://eggjs.org
 [sequelize]: https://sequelize.org/master
 [parameter]: https://github.com/node-modules/parameter
+[rabbitMq]: https://www.rabbitmq.com/
 
 ## 参与贡献
 
