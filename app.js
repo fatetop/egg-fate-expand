@@ -1,4 +1,3 @@
-const { run: runDlxConsume } = require('./app/utils/rabbitMq/dlx/consume');
 
 class AppBootHook {
 
@@ -59,7 +58,7 @@ class AppBootHook {
     const { exchange, queue, exchangeDLX, routingKeyDLX, queueDLX } = this.app.config.rabbit.working;
 
     // DLX 类型的 延迟消息队列
-    this.app.config.amqplib.enable && await runDlxConsume(
+    this.app.config.amqplib.enable && await ctx.utils.rabbitMq.dlx.consume.run(
       this.app.config.amqplib.connect, // 连接配置
       { exchange, queue, exchangeDLX, routingKeyDLX, queueDLX }, // 队列配置
       async (...args) => ctx.service.mq.consume.consume(...args), // 处理消费者消息
