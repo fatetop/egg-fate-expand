@@ -24,6 +24,32 @@ class BaseController extends Controller {
   }
 
   /**
+   * get http status code
+   * @param {number} code code
+   * @return {number} code
+   */
+  static getHttpCode(code) {
+    let httpCode = 500;
+    switch (code) {
+      case 0:
+        httpCode = 200; // 业务处理成功
+        break;
+      case 1000:
+        httpCode = 400; // 参数校验失败
+        break;
+      case 401:
+        httpCode = 401; // 认证失败
+        break;
+      case 201:
+        httpCode = 201; // 资源添加成功
+        break;
+      default:
+        break;
+    }
+    return httpCode;
+  }
+
+  /**
    * 请求可响应结果 json响应
    * @param {{ code: number; message: string; data: any; success: boolean }} body 响应体
    */
@@ -31,7 +57,7 @@ class BaseController extends Controller {
     this.ctx.set({
       'Content-Type': 'application/json',
     });
-    this.ctx.status = 200;
+    this.ctx.status = BaseController.getHttpCode(body.code);
     this.ctx.body = body;
   }
 
