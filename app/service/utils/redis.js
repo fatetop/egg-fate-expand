@@ -28,9 +28,9 @@ class RedisService extends Service {
    * @return {Promise<boolean>} 设置成功与否
    */
   async preSet(key, value, seconds) {
-    const { config, app } = this;
+    const { config, ctx } = this;
     // 数据为空 设置短效的缓存
-    if (app.isEmpty(value)) {
+    if (ctx.utils.tHelper.isEmpty(value)) {
       seconds = config.redis.expireTimeOut.DIC_CONFIG_NOT_EXISTS_SHORT;
     }
     return this.set(key, value, seconds);

@@ -1,5 +1,3 @@
-const tHelper = require('../utils/tHelper');
-
 const ioredis = require('ioredis');
 const Redlock = require('redlock');
 
@@ -79,7 +77,7 @@ module.exports = {
    * @param {any} data 响应数据
    * @return {{ code: number; message: string; data: any; success: boolean }} 返回成功响应体
    */
-  serviceSuccess(data = null) {
+  serviceSuccess(data = {}) {
     return {
       code: 0,
       message: '',
@@ -95,31 +93,13 @@ module.exports = {
    * @param {any} data 响应数据
    * @return {{ code: number; message: string; data: any; success: boolean }} 返回错误响应体
    */
-  serviceFail(code = 1000, message = '', data = null) {
+  serviceFail(code = 1000, message = '', data = {}) {
     return {
       code,
       message,
       data,
       success: false,
     };
-  },
-
-  /**
-   * check object is empty
-   * @param  {[Mixed]}  obj []
-   * @return {Boolean}     []
-   */
-  isEmpty(obj) {
-    return tHelper.isEmpty(obj);
-  },
-
-  /**
-   * true empty
-   * @param  {Mixed} obj []
-   * @return {Boolean}     []
-   */
-  isTrueEmpty(obj) {
-    return tHelper.isTrueEmpty(obj);
   },
 
 };

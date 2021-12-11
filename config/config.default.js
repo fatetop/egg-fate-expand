@@ -1,8 +1,6 @@
 /* eslint valid-jsdoc: "off" */
 const path = require('path');
 
-const { errorCode, errorMsg } = require('../app/utils/errorInfo');
-
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -24,6 +22,7 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [
     'errorHandler',
+    'notfoundHandler',
   ];
 
   // 安全防护
@@ -43,10 +42,21 @@ module.exports = appInfo => {
   //   allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
   // };
 
+  // customLoader https://github.com/eggjs/egg-core/blob/master/lib/loader/mixin/custom_loader.js
+  config.customLoader = {
+    // 定义在 ctx 上的属性名 ctx.utils
+    utils: {
+      // 相对于 app.config.baseDir
+      directory: 'app/utils',
+      // 如果是 app 则使用 loadToApp
+      inject: 'ctx',
+      // 是否加载框架和插件的目录
+      loadunit: false,
+    },
+  };
+
   // add your user config here
   const userConfig = {
-    // myAppName: 'egg',
-    errorCode, errorMsg,
     projectName: 'egg-template',
     redis: {
       expireTimeOut: {

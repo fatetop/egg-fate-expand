@@ -12,10 +12,13 @@ class BaseController extends Controller {
    */
   async sendMqDlx() {
     const { ctx, config } = this;
+    if (!config.amqplib.enable) {
+      // 没有使用rabbitMQ
+      throw new Error('Not enable amqplib');
+    }
     const { exchange, queue, exchangeDLX, routingKeyDLX } = config.rabbit.working;
     const msg = { a: 'hello world! hello world!' };
     const sendRes = await sendProducer(config.amqplib.connect, { exchange, queue, exchangeDLX, routingKeyDLX }, 5000, msg).catch(ctx.logger.error);
-    console.log('sendRes', sendRes);
     if (!sendRes) {
       // TODO 报警机制
       // service.utils.alarm.dingDingRobot();
@@ -47,7 +50,7 @@ class BaseController extends Controller {
     //     field: 'position'
     //   }
     // ]
-    this.apiResponse(this.app.serviceFail(this.config.errorCode.paramsError, `${errors[0].field} ${errors[0].message}`));
+    this.apiResponse(this.app.serviceFail(this.ctx.utils.errorInfo.errorCode.paramsError, `${errors[0].field} ${errors[0].message}`));
   }
 
 }

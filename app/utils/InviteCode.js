@@ -1,20 +1,20 @@
 /**
  * 生成邀请码
  * @author fate
- * @example 举例引入 import InviteCode from './InviteCode';
- * @example console.log(new InviteCode(2).id2ShareCode(0));
- * console.log(new InviteCode(2).shareCode2id('QU9RT47'));
- * @example console.log(new InviteCode(2).id2ShareCode(100));
- * console.log(new InviteCode(2).shareCode2id('89U4LEZ'));
- * @example console.log(new InviteCode(2).id2ShareCode(99992999));
- * console.log(new InviteCode(2).shareCode2id('A8PPXGU'));
- * @example console.log(new InviteCode(2).id2ShareCode(99992999999));
- * console.log(new InviteCode(2).shareCode2id('AMABAPXG'));
  */
 class InviteCode {
   /**
-   * 构造
+   * 生成邀请码
    * @param {number} type 类型 1 纯数字 2 混合
+   * @example 举例引入 import InviteCode from './InviteCode';
+   * @example new InviteCode(2).id2ShareCode(0);
+   * new InviteCode(2).shareCode2id('QU9RT47');
+   * @example new InviteCode(2).id2ShareCode(100);
+   * new InviteCode(2).shareCode2id('89U4LEZ');
+   * @example new InviteCode(2).id2ShareCode(99992999);
+   * new InviteCode(2).shareCode2id('A8PPXGU');
+   * @example new InviteCode(2).id2ShareCode(99992999999);
+   * new InviteCode(2).shareCode2id('AMABAPXG');
    */
   constructor(type = 1) {
 
