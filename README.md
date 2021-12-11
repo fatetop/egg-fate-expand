@@ -32,7 +32,8 @@
 │   ├── extend
 │   │   └── application.js
 │   ├── middleware
-│   │   └── error_handler.js
+│   │   ├── error_handler.js
+│   │   └── notfound_handler.js
 │   ├── model
 │   │   ├── dic.js
 │   │   └── user.js
